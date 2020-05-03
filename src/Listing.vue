@@ -16,10 +16,11 @@
                 <th>Provenance animal</th>
                 <th>Espace Vital animal</th>
                 <th>Nom propriétaire</th>
+                <th>Suppression</th>
               </tr>
             </thead>
             <tbody>
-              <tr v-for="animal in animals">
+              <tr v-for="(animal) in animals">
                 <td>
                   {{ animal.nom }}
                 </td>
@@ -40,6 +41,13 @@
                 </td>
                 <td>
                   {{ animal.login }}
+                </td>
+                <td>
+                  
+                    <div class="button">
+                        <a href="#" class="myButton" v-on:click="supprimer(animal.idAnimal)">DELETE</a>
+                    </div>
+                  
                 </td>
               </tr>
             </tbody>
@@ -68,6 +76,17 @@ export default {
         .then(response => {
           this.animals = response.data.animals;
           console.log(this.animals);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    },
+     supprimer : function(index) {
+      console.log("DANS METHODE DELETE APRES CLICK");
+      axios
+        .delete("http://localhost:8080/api/animals/"+index, index)
+        .then(response => {
+          console.log(response.data);
         })
         .catch(error => {
           console.log(error);
@@ -113,6 +132,30 @@ td {
 caption {
   font-family: sans-serif;
 }
+.myButton {
+	box-shadow: 3px 4px 0px 0px #8a2a21;
+	background:linear-gradient(to bottom, #c62d1f 5%, #f24437 100%);
+	background-color:#c62d1f;
+	border-radius:18px;
+	border:1px solid #d02718;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:7px 25px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #810e05;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #f24437 5%, #c62d1f 100%);
+	background-color:#f24437;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
 
 @media only screen and (max-width: 760px),
   (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -182,6 +225,10 @@ caption {
   }
   td:nth-of-type(7):before {
     content: "Nom propriétaire";
+    font-weight: bold;
+  }
+   td:nth-of-type(8):before {
+    content: "Suppression";
     font-weight: bold;
   }
 }

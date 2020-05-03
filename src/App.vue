@@ -7,7 +7,6 @@
     </div>
   </div>
 </template>
-
 <script>
 import Listing from "./Listing";
 import Add from "./Add";
@@ -25,6 +24,8 @@ export default {
 
 <style>
 #app {
+  background: url(Background.jpg) no-repeat center top;
+  background-size: cover;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -32,6 +33,7 @@ export default {
   color: #000000;
   margin-top: 60px;
 }
+
 #myHeader {
   font-size: 48px;
   text-shadow: -1px -1px #9df, 1px 1px #49d, -3px 0 4px #000;
@@ -45,6 +47,5 @@ export default {
   text-align: center;
   display: inline;
   line-height: 150px;
-  background-image: url(pic.jpg);
 }
 </style>
