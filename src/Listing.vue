@@ -4,11 +4,15 @@
 
   
   <div id="Listing">
-
-  <h1>Liste des Animaux </h1>  
-        <div v-for= "animal in animals">
-         
-         <table class="table table-bordered" style="text-align:center;">
+  
+<body>  
+        
+           <div class="container" id="tuto">
+      <br>
+ 
+      <div class="panel panel-primary">
+        <div class="panel-heading">Listing de nos Animaux</div> 
+         <table class="table table-fixed" >
                     <thead>
                         <tr>
                             <th>Nom de l'animal</th>
@@ -20,8 +24,8 @@
                             <th>Nom propriétaire</th>
                         </tr>
                     </thead>
-                    <tbody style="text-align:center;">
-                       <tr>
+                    <tbody >
+                       <tr v-for= "animal in animals">
                             <td>
                                 {{animal.nom}}
                             </td>
@@ -47,8 +51,12 @@
                     </tbody>
         </table>
          </div>
+         </div>
+        
+         </body>
          
   </div>
+  
 </template>
 
 
@@ -82,100 +90,84 @@ export default {
 }
 </script>
 
-
 <style>
-#listing {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #ffffff;
-  margin-top: 60px;
+
+
+table {
+border:3px solid #6495ed;
+border-collapse:collapse;
+width:90%;
+margin:auto;
+}
+thead, tfoot {
+background-color:#D0E3FA;
+border:1px solid #6495ed;
+}
+tbody {
+background-color:#FFFFFF;
+border:1px solid #6495ed;
+}
+th {
+font-family:monospace;
+border:1px dotted #6495ed;
+padding:5px;
+background-color:#EFF6FF;
+width:25%;
+}
+td {
+font-family:sans-serif;
+font-size:80%;
+border:1px solid #6495ed;
+padding:5px;
+text-align:left;
+}
+caption {
+font-family:sans-serif;
 }
 
-@media (min-width: 800px ) {
-    
-    .table table-bordered{
-        display: flex;
-        color: white;
-        list-style-type: none;
-        align-items: center;
-        text-transform: uppercase;
-        font-size: 1.1em;
-        font-family: 'Oswald', cursive;
-        padding-right: 10px;
-        margin-bottom: 1.5px;
-    }
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
 
-  
-  
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { border: 1px solid #ccc; }
+	
+	td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+	
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
 
-    .table table-bordered {
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-template-rows: auto;
-        grid-template-areas:
-        "item1 item2 item3 item4 item5 item6";
-        justify-items: center;
-        padding-top: 30px;
-        padding-bottom: 45px;
-    }
-
-   
-  }
-
-  @media (min-width: 1050px ) and (max-width: 1240px){
-   .table table-bordered{
-        display: flex;
-        color: white;
-        list-style-type: none;
-        align-items: center;
-        text-transform: uppercase;
-        font-size: 1.1em;
-        font-family: 'Oswald', cursive;
-        padding-right: 10px;
-        margin-bottom: 1.5px;
-    }
-
-  
-  
-
-    .table table-bordered {
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-template-rows: auto;
-        grid-template-areas:
-        "item1 item2 item3 item4 item5 item6";
-        justify-items: center;
-        padding-top: 30px;
-        padding-bottom: 45px;
-    }
-  }
-
-  @media (min-width: 800px ) and (max-width: 1050px){
-    .table table-bordered{
-        display: flex;
-        color: white;
-        list-style-type: none;
-        align-items: center;
-        text-transform: uppercase;
-        font-size: 1.1em;
-        font-family: 'Oswald', cursive;
-        padding-right: 10px;
-        margin-bottom: 1.5px;
-    }
-
-  
-  
-
-    .table table-bordered {
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-template-rows: auto;
-        grid-template-areas:
-        "item1 item2 item3 item4 item5 item6";
-        justify-items: center;
-        padding-top: 30px;
-        padding-bottom: 45px;
-    }
-  }
-
-
+  td:nth-of-type(1):before { content: "Nom Animal"; font-weight: bold; }
+	td:nth-of-type(2):before { content: "Age Animal"; font-weight: bold; }
+	td:nth-of-type(3):before { content: "Poids Animal"; font-weight: bold;  }
+	td:nth-of-type(4):before { content: "Regne Animal"; font-weight: bold; }
+	td:nth-of-type(5):before { content: "Provenance"; font-weight: bold; }
+	td:nth-of-type(6):before { content: "Espace Vital"; font-weight: bold; }
+	td:nth-of-type(7):before { content: "Nom propriétaire"; font-weight: bold; }
+}
 </style>
