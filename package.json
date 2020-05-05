@@ -31,5 +31,14 @@
     "vue-template-compiler": "^2.4.4",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.9.1"
-  }
+  },
+  "main": "webpack.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OussamaAouirika/animalerieVue.git"
+  },
+  "bugs": {
+    "url": "https://github.com/OussamaAouirika/animalerieVue/issues"
+  },
+  "homepage": "https://github.com/OussamaAouirika/animalerieVue#readme"
 }

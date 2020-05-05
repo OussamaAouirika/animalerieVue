@@ -1,7 +1,7 @@
 <template>
   <div id="Listing">
     <body>
-      <div class="container" id="tuto">
+      <div class="container" id="Listing">
         <br />
 
         <div class="panel panel-primary">
@@ -16,6 +16,7 @@
                 <th>Provenance animal</th>
                 <th>Espace Vital animal</th>
                 <th>Nom propriétaire</th>
+                <th>Modifier</th>
                 <th>Suppression</th>
               </tr>
             </thead>
@@ -45,7 +46,14 @@
                 <td>
                   
                     <div class="button">
-                        <a href="#" class="myButton" v-on:click="supprimer(animal.idAnimal)">DELETE</a>
+                        <a href="#" class="myModif" v-on:click="modifier(animal.idAnimal)">MODIFY</a>
+                    </div>
+                  
+                </td>
+                <td>
+                  
+                    <div class="button">
+                        <a href="#" class="myButton" v-on:click="newAnimal=newAnimal">DELETE</a>
                     </div>
                   
                 </td>
@@ -54,6 +62,7 @@
           </table>
         </div>
       </div>
+      <br>
     </body>
   </div>
 </template>
@@ -65,10 +74,16 @@ export default {
   data() {
     return {
       animals: [],
-      url: "http://localhost:8080/api/animals"
+      url: "http://localhost:8080/api/animals",
+      newAnimal: {
+        nom: "none",
+        age: 0,
+        poids: 0,
+        regne: 0,
+        proprietaire: 0
+      }
     };
   },
-
   methods: {
     get_animals() {
       axios

@@ -2,18 +2,12 @@
   <div id="app">
     <h1 id="myHeader">Mon animalerie</h1>
     <div class="conteneur-flex">
-      <Listing></Listing>
-      <Add></Add>
     </div>
   </div>
 </template>
 <script>
-import Listing from "./Listing";
-import Add from "./Add";
-import tuto from "./tuto";
 export default {
   name: "app",
-  components: { Listing, Add, tuto },
   data() {
     return {
       msg: "Welcome to Your Vue.js App"
