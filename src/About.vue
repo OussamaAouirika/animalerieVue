@@ -1,5 +1,5 @@
 <template>
-   <div>
+   <div id="About">
     About
   </div>
 </template>
@@ -16,5 +16,7 @@ name: "About",
 </script>
 
 <style>
-
+#About{
+    background-color: blue;
+}
 </style>

@@ -77,7 +77,7 @@
 <script>
 import axios from "axios";
 export default {
-  name: "add",
+  name: "Add",
   data() {
     return {
       regnes: [],

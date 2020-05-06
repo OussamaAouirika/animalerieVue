@@ -70,30 +70,28 @@
         </select>
       </div>
     </div>
-    <button v-on:click="editAnimal(newAnimal.idAnimal)">MODIFIER</button>
+    <button v-on:click="editAnimal">MODIFIER</button>
   </div>
 </template>
 
 <script>
 import axios from "axios";
 export default {
-  name: "edit",
-  props: 
-  newAnimal = {
-        idAnimal: 0,
+  name: "Edit",
+  data() {
+    return {
+      lid: 0,
+      regnes: [],
+      users: [],
+      animals: [],
+      //url: 'http://localhost:8080/api/animals',
+      newAnimal: {
         nom: "none",
         age: 0,
         poids: 0,
         regne: 0,
         proprietaire: 0
-      },
-  data() {
-    return {
-      regnes: [],
-      users: [],
-      animals: [],
-      //url: 'http://localhost:8080/api/animals',
-      
+      }
     };
   },
 
@@ -131,10 +129,10 @@ export default {
           console.log(error);
         });
     },
-    editAnimal: function(index) {
-      console.log("DANS METHODE EDIT APRES CLICK");
+    editAnimal: function() {
+      console.log("DANS METHODE EDIT APRES CLICK:"+this.lid);
       axios
-        .put("http://localhost:8080/api/animals/"+index, this.newAnimal)
+        .put("http://localhost:8080/api/animals/"+this.lid, this.newAnimal)
         .then(response => {
           console.log(response.data);
         })
@@ -147,12 +145,16 @@ export default {
     this.get_animals();
     this.get_regnes();
     this.get_users();
+  },
+  created(){
+    this.lid = this.$route.params.anim;
+    console.log("IDENTIFIANT DABS EDIT: "+lid);
   }
 };
 </script>
 
 <style>
-#add {
+#edit {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

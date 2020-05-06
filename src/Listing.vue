@@ -46,14 +46,14 @@
                 <td>
                   
                     <div class="button">
-                        <a href="#" class="myModif" v-on:click="modifier(animal.idAnimal)">MODIFY</a>
+                        <a href="#" class="myButon" v-on:click="modifier(animal.idAnimal)">MODIFY</a>
                     </div>
                   
                 </td>
                 <td>
                   
                     <div class="button">
-                        <a href="#" class="myButton" v-on:click="newAnimal=newAnimal">DELETE</a>
+                        <a href="#" class="myButton" v-on:click="supprimer(animal.idAnimal)">DELETE</a>
                     </div>
                   
                 </td>
@@ -70,7 +70,7 @@
 <script>
 import axios from "axios";
 export default {
-  name: "listing",
+  name: "Listing",
   data() {
     return {
       animals: [],
@@ -106,12 +106,16 @@ export default {
         .catch(error => {
           console.log(error);
         });
+    },
+    modifier : function(index) {
+      console.log("DANS METHODE MODFIER APRES CLICK:"+index);
+      this.$router.push({ name: 'edit', params: { anim: index }});
     }
   },
   mounted() {
     this.get_animals();
   }
-};
+}
 </script>
 
 <style>
@@ -161,6 +165,21 @@ caption {
 	padding:7px 25px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #810e05;
+}
+.myButon {
+	box-shadow: 3px 4px 0px 0px #2811ac;
+	background:linear-gradient(to bottom, #2811ac 5%, #2811ac 100%);
+	background-color:#2811ac;
+	border-radius:18px;
+	border:1px solid #2811ac;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:7px 25px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2811ac;
 }
 .myButton:hover {
 	background:linear-gradient(to bottom, #f24437 5%, #c62d1f 100%);

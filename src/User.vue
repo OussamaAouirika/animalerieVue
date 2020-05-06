@@ -1,22 +1,22 @@
 <template>
-  <div id="Home">
+  <div id="User">
     Home
   </div>
 </template>
 
 <script>
 export default {
-name: "Home",
+name: "User",
   data() {
     return {
-      msg: "Welcome to Your Home App"
+      msg: "Welcome to Your User App"
     };
   }
 }
 </script>
 
 <style>
-#Home{
-    background-color:brown;
+#User{
+    background-color:chartreuse;
 }
 </style>
