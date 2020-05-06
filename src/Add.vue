@@ -134,6 +134,7 @@ export default {
         .post("http://localhost:8080/api/animals", this.newAnimal)
         .then(response => {
           console.log(response.data);
+          this.$router.push({ name: 'listing'});
         })
         .catch(error => {
           console.log(error);

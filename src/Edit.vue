@@ -49,7 +49,7 @@
           v-model="newAnimal.regne"
           class="form-control"
         >
-          <option v-for="regne in regnes" v-bind:value="''+regne.idRegne">{{
+          <option v-for="regne in regnes" v-bind:value="'' + regne.idRegne">{{
             regne.nomregne
           }}</option>
         </select>
@@ -64,7 +64,7 @@
           v-model="newAnimal.proprietaire"
           class="form-control"
         >
-          <option v-for="user in users" v-bind:value="''+user.idUser">{{
+          <option v-for="user in users" v-bind:value="'' + user.idUser">{{
             user.login
           }}</option>
         </select>
@@ -130,11 +130,12 @@ export default {
         });
     },
     editAnimal: function() {
-      console.log("DANS METHODE EDIT APRES CLICK:"+this.lid);
+      console.log("DANS METHODE EDIT APRES CLICK:" + this.lid);
       axios
-        .put("http://localhost:8080/api/animals/"+this.lid, this.newAnimal)
+        .put("http://localhost:8080/api/animals/" + this.lid, this.newAnimal)
         .then(response => {
           console.log(response.data);
+          this.$router.push({ name: 'listing'});
         })
         .catch(error => {
           console.log(error);
@@ -146,9 +147,9 @@ export default {
     this.get_regnes();
     this.get_users();
   },
-  created(){
+  created() {
     this.lid = this.$route.params.anim;
-    console.log("IDENTIFIANT DABS EDIT: "+lid);
+    console.log("IDENTIFIANT DABS EDIT: " + lid);
   }
 };
 </script>

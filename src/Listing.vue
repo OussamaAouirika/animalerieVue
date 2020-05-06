@@ -102,6 +102,7 @@ export default {
         .delete("http://localhost:8080/api/animals/"+index, index)
         .then(response => {
           console.log(response.data);
+          this.$router.push({ name: 'listing'});
         })
         .catch(error => {
           console.log(error);
@@ -261,7 +262,11 @@ caption {
     content: "Nom propriétaire";
     font-weight: bold;
   }
-   td:nth-of-type(8):before {
+  td:nth-of-type(8):before {
+    content: "Modification";
+    font-weight: bold;
+  }
+   td:nth-of-type(9):before {
     content: "Suppression";
     font-weight: bold;
   }

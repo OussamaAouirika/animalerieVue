@@ -3,12 +3,10 @@
     <h1 id="myHeader">Mon animalerie</h1>
     <div class="conteneur-flex">
       <div>
-        <router-link to="/home">Home</router-link>
-        <router-link to="/about">About</router-link>
+        <router-link to="/home">HOME</router-link>
+        <router-link to="/about">ABOUT</router-link>
         <router-link to="/add">ADD</router-link>
         <router-link to="/listing">LISTING</router-link>
-        <router-link to="/edit/:anim">edit</router-link>
-        <router-link to="/user">User</router-link>
         <router-view></router-view>
       </div>
     </div>
