@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <h1 id="myHeader">Mon animalerie</h1>
+     
     <div class="conteneur-flex">
       <div class="header">
-        <a href="https://www.w3schools.com/" tabindex="2">W3Schools</a>
+        <!-- <a href="https://www.w3schools.com/" tabindex="2">W3Schools</a>
         <a href="http://www.google.com/" tabindex="1">Google</a>
-        <a href="http://www.microsoft.com/" tabindex="3">Microsoft</a>
+        <a href="http://www.microsoft.com/" tabindex="3">Microsoft</a> -->
         <a href=""
-          ><img id="logo" src="candriam.png" alt="logo of candriam"
+          ><img id="logo" src="./img/candriam.png" alt="logo of candriam"
         /></a>
         <div aria-label="Menu" style="display: inherit;" role="navigation">
-          <img id="barmenu" src="barmenu.svg" alt="bar de menu" />
+          <img id="barmenu" src="./img/barmenu.svg" alt="bar de menu" />
         </div>
         <nav>
           <div class="navstrong">
@@ -26,24 +26,40 @@
             <li>
               <router-link to="/listing">LISTING</router-link>
             </li>
-            <router-view></router-view>
+            
           </div>
           <li>
             <div class="search" aria-label="Search">
               <input type="text" name="x" placeholder="Search" />
-              <img src="search.png" alt="search logo" />
+              <img src="./img/search.png" alt="search logo" />
             </div>
           </li>
           <li>
-            <a href="#" class="button button1">Investir ?</a>
+            <a href="#" class="button button1">FRONTEND</a>
           </li>
           <li>
-            <a href="#" class="button button2">FAQs</a>
+            <a href="#" class="button button2">BACKEND</a>
           </li>
         </nav>
+        
       </div>
+      <div id="overlay"></div>
+        <div class="main-image">
+            <h1>Les animaux du monde</h1>
+        </div>
+      <router-view></router-view>
     </div>
+      <footer>
+            <p>lesanimauxdumonde@ <span class="footer-white">gmail.com</span></p>
+            <div class="logos">
+                <a href="#"><img src="./img/facebook.png" alt="Facebook logo"></a>
+                <a href="#"><img src="./img/twitter.png" alt="Twitter logo"></a>
+                <a href="#"><img src="./img/instagram.png" alt="Instagram logo"></a>
+                <a href="#"><img src="./img/youtube.png" alt="Youtube logo"></a>
+            </div>
+  </footer>
   </div>
+
 </template>
 <script>
 export default {
@@ -57,8 +73,7 @@ export default {
 </script>
 
 <style>
-
-/* @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
 @import url('https://fonts.googleapis.com/css?family=Oswald');
 @import url('https://fonts.googleapis.com/css?family=Passion+One');
@@ -96,8 +111,9 @@ body {
 }
 
 #logo {
-    height: 75px;
-    margin-left: 10px;
+    height: 25px;
+    margin-left: 5px;
+    margin-top: 1px;
 }
 
 #barmenu {
@@ -201,8 +217,8 @@ a {
 }
 
 .main-image {
-    /* background-image: url(img/wallpaper.jpg); */
-    /* background-repeat: no-repeat;
+    background-image: url(./img/wallpaper.jpg);
+    background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     min-height: 320px;
@@ -335,7 +351,7 @@ footer p {
 }
 
 .logos {
-    margin-right: 30px;
+    margin-right: 30px; 
 }
 
 footer p, .logos {
@@ -364,7 +380,7 @@ footer p, .logos {
         top: 0;
         left: 0;
         width: auto;
-        height: 130px;
+        height: 60px;
         background-color: rgba(255, 255, 255, 0.938);
         padding: 10 0;
         border: rgb(36, 36, 36) 1px solid;
@@ -538,11 +554,11 @@ footer p, .logos {
     .wrapper {
         width: 800px;
     }
-
+    
     .header nav li {
         margin: 0 8px 0 0;
         font-size: 0.7em !important;
-    }
+    } 
 
     .navstrong {
         padding-right: 5px;
@@ -570,12 +586,13 @@ footer p, .logos {
         grid-column-gap: 0;
     }
 
-    .grid-container h4 { 
+    .grid-container h4 {
         font-size: 1.3em;
     }
-  } */
- #app {
-  /* background: url(Background.jpg) no-repeat center top ; */
+  }
+
+ /* #app {
+  background: url(Background.jpg) no-repeat center top ;
    background-size: cover;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -598,5 +615,5 @@ footer p, .logos {
   text-align: center;
   display: inline;
   line-height: 150px;
-} 
+}  */
 </style>
