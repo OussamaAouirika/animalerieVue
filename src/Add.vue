@@ -80,7 +80,7 @@
               </select>
             </div>
           </div>
-          <button class="submit" v-on:click="postAnimal">AJOUTER</button>
+          <button id="submit" v-on:click="postAnimal">AJOUTER</button>
         </div>
       </div>
     </div>

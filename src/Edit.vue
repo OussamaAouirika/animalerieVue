@@ -80,7 +80,7 @@
               </select>
             </div>
           </div>
-          <button v-on:click="editAnimal">MODIFIER</button>
+          <button id="submit" v-on:click="editAnimal">MODIFIER</button>
         </div>
       </div>
     </div>
