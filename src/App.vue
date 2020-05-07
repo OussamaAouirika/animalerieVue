@@ -612,7 +612,12 @@ footer p, .logos {
         font-size: 1.3em;
     }
   }
-   @media (max-width: 800px ){
+
+
+
+
+  
+  @media (max-width: 800px ){
     .grid-contact-container {
         display: grid;
         grid-template-columns: 1fr;
@@ -628,7 +633,7 @@ footer p, .logos {
         margin-bottom: 25px;
     }
 
-    .grid-contact-container form {
+    .grid-contact-container .form {
         width: 100%;
         margin: 0 auto;
         text-align: center;
@@ -652,7 +657,7 @@ footer p, .logos {
         width: 300px;
         height: auto;
     }
-    .grid-contact-container form {
+    .grid-contact-container .form {
         width: 80%;
         margin: 0 auto;
         text-align: center;
@@ -661,7 +666,7 @@ footer p, .logos {
 
 
 
-.grid-contact-container form input, .grid-contact-container form select {
+.grid-contact-container .form input, .grid-contact-container .form select {
     margin: 8px 0;
     width: 100%;
     background-color: rgb(223, 223, 223);
@@ -676,7 +681,7 @@ footer p, .logos {
     transition: all 0.15s ease-in-out;
 }
 
-.grid-contact-container form input:focus, .grid-contact-container form select:focus {
+.grid-contact-container .form input:focus, .grid-contact-container .form select:focus {
     background-color: rgb(30, 191, 202);
 }
 
@@ -725,7 +730,7 @@ select {
   border: 2px solid #41097c;
   border-radius: 2px;
   background-color: #f1f1f1;
-} 
+}
 
  /* #app {
   background: url(Background.jpg) no-repeat center top ;
