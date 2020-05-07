@@ -20,27 +20,27 @@
                     C’est plus de 500 collaborateurs à travers le monde qui travaillent ensemble pour satisfaire les besoins de leurs clients.<br>
                 </h3>
                 <div class="grid-container" role="tablist">
-                        <a href="#" class="item1 voiture">
+                        <a href="#" class="item1 felins">
                             <img src="./img/item1.jpg" alt="Félins">
                             <h4>Félins</h4>
                         </a>
-                        <a href="#" class="item2 repas" alt="Rongeurs">
+                        <a href="#" class="item2 rongeurs" alt="Rongeurs">
                             <img src="./img/item2.jpg">
                             <h4>Rongeurs</h4>
                         </a>
-                        <a href="#" class="item3 telephone" alt="Canidés">
+                        <a href="#" class="item3 canides" alt="Canidés">
                             <img src="./img/item3.jpg">
                             <h4>Canidés</h4>
                         </a>
-                        <a href="#" class="item4 ordinateur" alt="Poissons">
+                        <a href="#" class="item4 poissons" alt="Poissons">
                             <img src="./img/item4.jpg">
                             <h4>Poissons</h4>
                         </a>
-                        <a href="#" class="item5 assurance" alt="Réptiles">
+                        <a href="#" class="item5 reptiles" alt="Réptiles">
                             <img src="./img/item5.jpg">
                             <h4>Réptiles</h4>
                         </a>
-                        <a href="#" class="item6 congés" alt="Oiseaux">
+                        <a href="#" class="item6 oiseaux" alt="Oiseaux">
                             <img src="./img/item6.jpg">
                             <h4>Oiseaux</h4>
                         </a>

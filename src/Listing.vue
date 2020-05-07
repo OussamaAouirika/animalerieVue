@@ -4,8 +4,10 @@
       <div class="container" id="Listing">
         <br />
 
-        <div class="panel panel-primary">
-          <div class="panel-heading">Listing de nos Animaux</div>
+        <div class="main">
+          <div class="title">
+                    <h2>Listing des animaux</h2>
+          </div>
           <table class="table table-fixed">
             <thead>
               <tr>

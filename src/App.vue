@@ -15,18 +15,17 @@
         <nav>
           <div class="navstrong">
             <li>
-              <router-link to="/home">HOME</router-link>
+              <router-link to="/home">ACCUEIL</router-link>
             </li>
             <li>
-              <router-link to="/about">ABOUT</router-link>
+              <router-link to="/listing">LISTE DES ANIMAUX</router-link>
             </li>
             <li>
-              <router-link to="/add">ADD</router-link>
+              <router-link to="/add">INSCRIRE UN ANIMAL</router-link>
             </li>
             <li>
-              <router-link to="/listing">LISTING</router-link>
-            </li>
-            
+              <router-link to="/about">ABOUT US</router-link>
+            </li>    
           </div>
           <li>
             <div class="search" aria-label="Search">
@@ -312,28 +311,50 @@ a {
     border-radius: 50px;
 }
 
-.voiture {
+.felins {
     color: #b71234;
 }
 
-.telephone {
+.rongeurs {
     color: #d55c19;
 }
 
-.ordinateur {
+.canides {
     color: #00675a;
 }
 
-.repas {
+.poissons {
     color: #53284f;
 }
 
-.assurance {
+.reptiles {
     color: #55601c;
 }
 
-.congés {
+.oiseaux {
     color: #006983;
+}
+
+.maestro {
+    color: #b71234;
+}
+
+.mastercard {
+    color: #00675a;
+}
+
+.visa {
+    color: #d55c19;
+}
+
+.paypal {
+    color: #006983;
+}
+.tel {
+    color: #53284f;
+}
+.adresse {
+    color: #55601c;
 }
 
 footer {
@@ -544,7 +565,8 @@ footer p, .logos {
         grid-template-rows: auto;
         grid-template-areas:
         "item1 item2 item3"
-        "item4 item5 item6";
+        "item4 item5 item6"
+        "item7 item8 item9 item10";
         grid-row-gap: 35px;
         grid-column-gap: 0;
     }
@@ -590,6 +612,120 @@ footer p, .logos {
         font-size: 1.3em;
     }
   }
+   @media (max-width: 800px ){
+    .grid-contact-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "item1"
+        "item2";
+        grid-template-rows: auto;
+        justify-items: center;
+    }
+    .grid-contact-container img {
+        width: 200px;
+        height: auto;
+        margin-bottom: 25px;
+    }
+
+    .grid-contact-container form {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    input {
+        font-size: 1.1em;
+    }
+}
+
+@media (min-width: 801px ){
+    .grid-contact-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        "item1 item2";
+        grid-template-rows: auto;
+        justify-items: center;
+    }
+    .grid-contact-container img {
+        width: 300px;
+        height: auto;
+    }
+    .grid-contact-container form {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+
+
+
+.grid-contact-container form input, .grid-contact-container form select {
+    margin: 8px 0;
+    width: 100%;
+    background-color: rgb(223, 223, 223);
+    border-style: none;
+    border-radius: 10px;
+    line-height: 2em;
+    padding-left: 20px;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: rgb(66, 66, 66);
+    resize: none;
+    outline: none;
+    transition: all 0.15s ease-in-out;
+}
+
+.grid-contact-container form input:focus, .grid-contact-container form select:focus {
+    background-color: rgb(30, 191, 202);
+}
+
+
+#submit {
+    width: 50%;
+    font-size: 1em;
+    padding: 8px 20px 10px 20px;
+    background-color: #40a12f;
+    color: white;
+    font-weight: bolder;
+    border-radius: 10px;
+    text-transform: uppercase;
+    border-style: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    transition: all 0.20s ease-in-out;
+    margin-top: 20px;
+}
+
+#submit:hover {
+    background-color: rgb(74, 69, 80);
+}
+ .label {
+  color: white;
+  padding: 0.2px;
+}
+
+.nom {
+  background-color: #4caf50;
+}
+.age {
+  background-color: rgb(76, 83, 175);
+}
+.poids {
+  background-color: rgb(209, 28, 28);
+}
+.regne {
+  background-color: rgb(12, 20, 95);
+}
+.proprietaire {
+  background-color: rgb(6, 48, 13);
+}
+select {
+  width: 20%;
+  padding: 5px 5px;
+  border: 2px solid #41097c;
+  border-radius: 2px;
+  background-color: #f1f1f1;
+} 
 
  /* #app {
   background: url(Background.jpg) no-repeat center top ;
